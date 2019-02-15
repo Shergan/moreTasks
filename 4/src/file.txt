@@ -1,17 +1,17 @@
         // 1
         // List mNamesList
-        mNamesList.removeAll(mNamesList);
+        mNamesList.removeAll(mNamesList);   // mNameList.removeAll();
 
 
         // 2
-        if (editCar != null || editCar.getVehicleId() < 0) {
+        if (editCar != null || editCar.getVehicleId() < 0) { // || изменить на && иначе editCar.getVehicleId() должно упасть
             itemMenuDelete.setVisible(true);
         }
 
 
         // 3
         String imagePath = oldImages.get(i).toString();
-        imagePath.replace("\\/", "/");
+        imagePath.replace("\\/", "/");      //возвращает новую строку в никуда, соответственно нет изменений
         if (mOutterListFirst.contains(imagePath)) {
             mOutterListFirst.remove(imagePath);
         }
@@ -21,7 +21,7 @@
         if (spinnerStat != null) {
             spinnerStat.setBackgroundResource(R.drawable.bg_spinner);
         } else {
-            spinnerStat.setBackgroundResource(R.drawable.bg_spinner_error);
+            spinnerStat.setBackgroundResource(R.drawable.bg_spinner_error); //если spinnerStat == null, то упадёт
         }
 
 
@@ -30,38 +30,38 @@
             if (device.getAddress().equalsIgnoreCase(remoteDevice)) {
                 startCommandsLoading();
             }
-            break;
+            break; // брейк произойдет после первой итерации
         }
 
 
         // 6
         public void setFacilitateCode (String code){
-            code = code;
+            code = code;    //this.code = code;
         }
 
 
         // 7
         public int getTongue () {
-            return tongue = tongue;
+            return tongue = tongue;     //return this.tongue;
         }
 
         public int getTires () {
-            return tires = tires;
+            return tires = tires;       //return this.tires;
         }
 
         public int getTank_type () {
-            return tank_type = tank_type;
+            return tank_type = tank_type;       //return this.tank_type; и лучше tankType
         }
 
         public int getSuspension () {
-            return suspension = suspension;
+            return suspension = suspension;     //return this.suspension;
         }
 
 
         // 8
         if (itemIdForTitle.equalsIgnoreCase("Left Rocker Panel")) {
             itemIdForTitle = "Right Rocker Panel";
-        } else if (itemIdForTitle.equalsIgnoreCase("Left Rocker Panel")) {
+        } else if (itemIdForTitle.equalsIgnoreCase("Left Rocker Panel")) {      //одинаковый с первым if, никогда не выполнится
             itemIdForTitle = "Left Front Rocker Panel";
         }
 
@@ -83,6 +83,6 @@
 
                 default:
                     name = name.replaceAll("_", " ");
-                    name = StringUtils.capitalizeFully(name);
-            }
+                    name = StringUtils.capitalizeFully(name);       //выполняется одно и тоже. Можно сразу сделать последние две строки
+            }       //нет return
         }
