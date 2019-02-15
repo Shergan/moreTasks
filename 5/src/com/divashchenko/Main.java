@@ -31,18 +31,18 @@ public class Main {
 
         for (int i = 0; i < 10; i++) {
             int max = Collections.max(map.values());
-            List<String> keys = new ArrayList<>();
-            List<Integer> values = new ArrayList<>();
+            String key = "";
+            int value = 0;
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 if (entry.getValue() == max) {
-                    keys.add(entry.getKey());
-                    values.add(entry.getValue());
+                    key = entry.getKey();
+                    value = entry.getValue();
                     map.remove(entry.getKey());
                     break;
                 }
             }
 
-            System.out.println(i + 1 + ". " + keys.get(0) + " = " + values.get(0) + " times.");
+            System.out.println(i + 1 + ". " + key + " = " + value + " times.");
         }
 
 
